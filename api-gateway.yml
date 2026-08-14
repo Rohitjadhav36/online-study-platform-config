@@ -1,5 +1,6 @@
 server:
   port: 8080
+
 spring:
   cloud:
     gateway:
@@ -10,18 +11,13 @@ spring:
               enabled: true
               lower-case-service-id: true
 
-
+          routes:
+            - id: user-service
+              uri: lb://USER-SERVICE
+              predicates:
+                - Path=/api/v1/users/**
 
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
-
-  routes:
-   - id: user-service
-     uri: lb://USER-SERVICE
-     predicates:
-     - Path=/api/v1/users/**
-
-   
-
