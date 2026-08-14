@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: api-gateway
+    name: API-GATEWAY
 
   cloud:
     gateway:
@@ -14,7 +14,18 @@ spring:
               enabled: true
               lower-case-service-id: true
 
+
+
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
+
+  routes:
+   - id: user-service
+     uri: lb://USER-SERVICE
+     predicates:
+     - Path=/api/v1/users/**
+
+   
+
