@@ -1,6 +1,6 @@
 server:
   port: 8081
-
+spring:
   datasource:
     url: jdbc:mysql://localhost:3306/online_study_user_db
     username: ${DB_USERNAME}
