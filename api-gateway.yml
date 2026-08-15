@@ -17,7 +17,6 @@ spring:
               predicates:
                 - Path=/api/v1/users/**
 
-          routes:
             - id: media-service
               uri: lb://MEDIA-SERVICE
               predicates:
