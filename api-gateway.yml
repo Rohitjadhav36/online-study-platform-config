@@ -21,6 +21,10 @@ spring:
               uri: lb://MEDIA-SERVICE
               predicates:
                 - Path=/api/v1/media/**
+              filters:
+                - name: RequestSize
+                  args:
+                    maxSize: 500MB
 
 eureka:
   client:
