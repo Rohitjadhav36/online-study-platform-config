@@ -26,6 +26,16 @@ spring:
                   args:
                     maxSize: 500MB
 
+            - id: course-service
+              uri: lb://COURSE-SERVICE
+              predicates:
+                - Path=/api/v1/courses/**
+              filters:
+                - name: RequestSize
+                  args:
+                    maxSize: 500MB
+
+
 eureka:
   client:
     service-url:
