@@ -7,7 +7,10 @@ spring:
       resourceserver:
         jwt:
           issuer-uri: http://localhost:8181/realms/studyhub
-          
+
+          audiences:
+            - media-service
+
   servlet:
     multipart:
       max-file-size: 500MB
