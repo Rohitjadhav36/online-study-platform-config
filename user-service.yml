@@ -2,6 +2,12 @@ server:
   port: 8081
 
 spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8181/realms/studyhub
+
   datasource:
     url: jdbc:mysql://localhost:3306/online_study_user_db
     username: ${DB_USERNAME}
