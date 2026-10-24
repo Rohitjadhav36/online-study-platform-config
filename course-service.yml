@@ -7,6 +7,25 @@ spring:
       resourceserver:
         jwt:
           issuer-uri: http://localhost:8181/realms/studyhub
+
+      client:
+        registration:
+          media-service:
+            provider: keycloak
+            client-id: course-service
+            client-secret: ${COURSE_SERVICE_CLIENT_SECRET}
+            client-authentication-method: client_secret_basic
+            authorization-grant-type: client_credentials
+            
+        provider:
+          keycloak:
+            token-uri: http://localhost:8181/realms/studyhub/protocol/openid-connect/token
+
+  cloud:
+    openfeign:
+      oauth2:
+        enabled: true
+        clientRegistrationId: media-service 
   
   servlet:
     multipart:
