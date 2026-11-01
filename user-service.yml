@@ -39,3 +39,10 @@ management:
 studyhub:
   frontend:
     base-url: http://localhost:5173
+
+
+keycloak:
+  server-url: http://localhost:8181
+  realm: studyhub
+  client-id: user-service
+  client-secret: ${USER_SERVICE_CLIENT_SECRET}
