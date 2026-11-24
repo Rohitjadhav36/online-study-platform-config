@@ -22,7 +22,7 @@ spring:
             - id: user-service
               uri: lb://USER-SERVICE
               predicates:
-                - Path=/api/v1/users/**
+                - Path=/api/v1/users/**,/api/v1/super-admin/**,/api/v1/admin/**
 
             - id: media-service
               uri: lb://MEDIA-SERVICE
@@ -36,7 +36,7 @@ spring:
             - id: course-service
               uri: lb://COURSE-SERVICE
               predicates:
-                - Path=/api/v1/courses/**,/api/v1/sections/**,/api/v1/lessons/**,/api/v1/categories/**
+                - Path=/api/v1/courses/**,/api/v1/sections/**,/api/v1/lessons/**,/api/v1/categories/**,/api/v1/admin/**
 
 eureka:
   client:
